@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 
 import meImage from "@assets/stock_images/case-2.webp";
 import ecopulseimage from "@assets/stock_images/eco-read.png";
+import farm from "@assets/stock_images/e-farm.jpg";
 
 type Category =
   | "All"
@@ -26,16 +27,16 @@ type Project = {
   location: string;
   date: string;
   image: string;
-  route: string; // internal route for each case study
+  route: string;
 };
 
 const projects: Project[] = [
   {
     id: 2,
     title: "EcoPulse: A Civic-Tech Ecosystem for Air Quality Action",
-    category: "M&E",
+    category: "Research",
     mission:
-      "To empower communities with real-time air-quality data, AI-driven health guidance, and a public accountability system to enable timely protective actions, drive evidence-based government interventions and generate epidemiology data to inform scalable solutions against air pollution.",
+      "To empower communities with real-time air-quality data, AI-driven health guidance, and a public accountability system...",
     progress: "Phase 1 activities ongoing",
     stats: "Phase 1 active",
     location: "Urban Kenya",
@@ -46,7 +47,7 @@ const projects: Project[] = [
   {
     id: 3,
     title: "Using Digital Health to Improve HIV Care Retention",
-    category: "M&E",
+    category: "Research",
     description:
       "Tags: HIV Care, Digital Health, UX Research, Usability Testing, Prototyping, Patient Engagement, Predictive AI, Targeting, Design Research, Data-Driven Care, Equity, Innovation",
     stats: "3,000+ youth reached",
@@ -67,6 +68,18 @@ const projects: Project[] = [
     image: meImage,
     route: "/health-worker-usability",
   },
+  {
+    id: 5,
+    title: "E-farm",
+    category: "Research",
+    description:
+      "Tags: Agricultural Marketplace, Buyers, Sellers, Farmers, Real-Time Listings, Inventory Management, Secure Payments, Logistics Coordination, Data-Driven Insights, User-Friendly Interface, Community Engagement, Sustainable Farming",
+    stats: "Connecting 1000+ farmers and buyers across East Africa, facilitating 5000+ transactions",
+    location: "Kenya",
+    date: "2025",
+    image: farm,
+    route: "/efarm-web-app",
+  },
 ];
 
 const pageFade = {
@@ -80,18 +93,8 @@ const gridVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-  exit: {
-    opacity: 0,
-    y: 30,
-    scale: 0.95,
-    transition: { duration: 0.3 },
-  },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  exit: { opacity: 0, y: 30, scale: 0.95, transition: { duration: 0.3 } },
 };
 
 export default function CaseStudies() {
@@ -124,8 +127,7 @@ export default function CaseStudies() {
             Our Impact
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
-            Explore our portfolio of projects driving sustainable development
-            across the continent.
+            Explore our portfolio of projects driving sustainable development across the continent.
           </p>
         </div>
       </div>
@@ -152,7 +154,7 @@ export default function CaseStudies() {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
@@ -188,9 +190,7 @@ export default function CaseStudies() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-4">
-                    {project.title}
-                  </h3>
+                  <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
 
                   {project.description && (
                     <p className="text-muted-foreground mb-6 line-clamp-4">
@@ -198,11 +198,13 @@ export default function CaseStudies() {
                     </p>
                   )}
 
-                  {/* CTA using internal Link for all projects */}
+                  {/* CTA using Link + Button properly */}
                   <Link href={project.route}>
-                    <Button className="w-full justify-between">
-                      Read Case Study
-                      <ArrowRight className="w-5 h-5" />
+                    <Button asChild className="w-full justify-between">
+                      <a>
+                        Read Case Study
+                        <ArrowRight className="w-5 h-5" />
+                      </a>
                     </Button>
                   </Link>
                 </div>

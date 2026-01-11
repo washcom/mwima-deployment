@@ -8,6 +8,7 @@ import mitigating from "@assets/stock_images/strategy.png";
 import meImage from "@assets/stock_images/data_analysis_monito_5040bc45.jpg";
 import software_engineering from "@assets/stock_images/software_engineering.jpg";
 
+
 export default function Home() {
   return (
     <div className="flex flex-col bg-background text-foreground">

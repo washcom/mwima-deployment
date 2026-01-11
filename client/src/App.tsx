@@ -11,6 +11,7 @@ import CaseStudies from "@/pages/case-studies";
 import Contact from "@/pages/contact";
 import EcoRead from "@/pages/Eco-read";
 import art from "@/pages/art";
+import farms from "@/pages/farm";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route path="/eco-read" component={EcoRead} />
         <Route path="/art-malawi" component={art} />
+        <Route path="/efarm-web-app" component={farms} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
