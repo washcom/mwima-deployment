@@ -99,13 +99,7 @@ export default function Contact() {
                     info@mwimaconsulting.com
                   </a>
                 </div>
-              </div>
-
-              <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary">
-                  <Phone className="w-6 h-6" />
-                </div>              
-              </div>
+              </div>              
             </div>           
             <div className="mt-12 p-8 bg-muted rounded-2xl border">
               <h3 className="font-bold text-lg mb-3">Consulting Hours</h3>

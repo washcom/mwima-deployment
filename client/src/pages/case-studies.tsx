@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { Filter, MapPin, Calendar, Users, ArrowRight } from "lucide-react";
+import { MapPin, Calendar, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -15,20 +15,23 @@ type Category =
   | "Capacity Building"
   | "Design Strategy";
 
-const projects = [
+type Project = {
+  id: number;
+  title: string;
+  category: Category;
+  description?: string;
+  mission?: string;
+  progress?: string;
+  stats: string;
+  location: string;
+  date: string;
+  image: string;
+  route: string; // internal route for each case study
+};
+
+const projects: Project[] = [
   {
-    id: 1,
-    title: "Youth Livelihood Program Evaluation",
-    category: "M&E",
-    description:
-      "Comprehensive midterm evaluation of a multi-country youth employment initiative reaching 50,000+ beneficiaries.",
-    stats: "3,000+ youth reached",
-    location: "Kenya & Uganda",
-    date: "2023",
-    image: meImage,
-  },
-  {
-    id: 7,
+    id: 2,
     title: "EcoPulse: A Civic-Tech Ecosystem for Air Quality Action",
     category: "M&E",
     mission:
@@ -38,10 +41,33 @@ const projects = [
     location: "Urban Kenya",
     date: "Ongoing (2025)",
     image: ecopulseimage,
+    route: "/eco-read",
+  },
+  {
+    id: 3,
+    title: "Using Digital Health to Improve HIV Care Retention",
+    category: "M&E",
+    description:
+      "Tags: HIV Care, Digital Health, UX Research, Usability Testing, Prototyping, Patient Engagement, Predictive AI, Targeting, Design Research, Data-Driven Care, Equity, Innovation",
+    stats: "3,000+ youth reached",
+    location: "Malawi",
+    date: "2023",
+    image: meImage,
+    route: "/art-malawi",
+  },
+  {
+    id: 4,
+    title: "Health Worker Digital Tool Usability Study",
+    category: "Research",
+    description:
+      "Tags: Predictive AI, Targeting, Design Research, Usability Testing, Data-Driven Care, Equity, Innovation",
+    stats: "400+ health workers engaged",
+    location: "East Africa",
+    date: "2024",
+    image: meImage,
+    route: "/health-worker-usability",
   },
 ];
-
-/* ------------------ Animation Variants ------------------ */
 
 const pageFade = {
   hidden: { opacity: 0 },
@@ -49,12 +75,7 @@ const pageFade = {
 };
 
 const gridVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.12 } },
 };
 
 const cardVariants = {
@@ -97,55 +118,30 @@ export default function CaseStudies() {
       className="bg-background min-h-screen pb-20"
     >
       {/* Header */}
-      <div className="bg-background text-foreground py-20 mb-12 border-b border-border">
+      <div className="py-20 mb-12 border-b border-border">
         <div className="container mx-auto px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl font-extrabold mb-6 text-primary tracking-tight"
-          >
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-primary">
             Our Impact
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed"
-          >
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
             Explore our portfolio of projects driving sustainable development
             across the continent.
-          </motion.p>
+          </p>
         </div>
       </div>
 
       <div className="container mx-auto px-4">
         {/* Filters */}
-        <div className="flex flex-wrap items-center gap-3 mb-12">
-          <div className="flex items-center text-muted-foreground mr-4">
-            <Filter className="w-5 h-5 mr-2" />
-            <span className="font-semibold">Filter by:</span>
-          </div>
-
+        <div className="flex flex-wrap gap-3 mb-12">
           {categories.map((cat) => (
-            <motion.div
+            <Button
               key={cat}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              variant={activeFilter === cat ? "default" : "outline"}
+              onClick={() => setActiveFilter(cat)}
+              className="rounded-full px-6"
             >
-              <Button
-                variant={activeFilter === cat ? "default" : "outline"}
-                onClick={() => setActiveFilter(cat)}
-                className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${
-                  activeFilter === cat
-                    ? "bg-primary text-primary-foreground shadow-lg"
-                    : "bg-transparent hover:bg-muted hover:border-primary/50"
-                }`}
-              >
-                {cat}
-              </Button>
-            </motion.div>
+              {cat}
+            </Button>
           ))}
         </div>
 
@@ -154,7 +150,6 @@ export default function CaseStudies() {
           variants={gridVariants}
           initial="hidden"
           animate="visible"
-          layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
           <AnimatePresence>
@@ -165,98 +160,52 @@ export default function CaseStudies() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                layout
                 whileHover={{ y: -8 }}
-                className="group bg-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-border/30"
+                className="bg-card rounded-3xl overflow-hidden shadow-lg border"
               >
                 {/* Image */}
-                <div className="relative h-72 overflow-hidden">
-                  <motion.img
+                <div className="relative h-72">
+                  <img
                     src={project.image}
                     alt={project.title}
-                    initial={{ scale: 1.05 }}
-                    whileHover={{ scale: 1.15 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
                     className="w-full h-full object-cover"
                   />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-70" />
-
                   <div className="absolute top-5 left-5">
-                    <Badge className="bg-white/95 text-primary font-bold text-xs uppercase px-4 py-2 backdrop-blur-md shadow-md">
-                      {project.category}
-                    </Badge>
-                  </div>
-
-                  <div className="absolute bottom-5 left-5 text-white">
-                    <div className="flex items-center text-sm font-semibold bg-white/20 backdrop-blur-sm rounded-full px-5 py-2.5">
-                      <Users className="w-5 h-5 mr-2" />
-                      {project.stats}
-                    </div>
+                    <Badge>{project.category}</Badge>
                   </div>
                 </div>
 
                 {/* Content */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.15 }}
-                  className="p-8 md:p-10"
-                >
-                  <div className="flex items-center text-sm text-muted-foreground mb-5 space-x-6 uppercase tracking-wider">
-                    <div className="flex items-center font-medium">
-                      <MapPin className="w-4 h-4 mr-2" />
+                <div className="p-8">
+                  <div className="flex text-sm text-muted-foreground gap-4 mb-4">
+                    <span className="flex items-center">
+                      <MapPin className="w-4 h-4 mr-1" />
                       {project.location}
-                    </div>
-                    <div className="flex items-center font-medium">
-                      <Calendar className="w-4 h-4 mr-2" />
+                    </span>
+                    <span className="flex items-center">
+                      <Calendar className="w-4 h-4 mr-1" />
                       {project.date}
-                    </div>
+                    </span>
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-extrabold mb-5 leading-tight tracking-tight">
+                  <h3 className="text-2xl font-bold mb-4">
                     {project.title}
                   </h3>
 
-                  {project.mission && (
-                    <div className="mb-8">
-                      <h4 className="text-lg font-bold mb-3">Mission</h4>
-                      <p className="text-muted-foreground italic leading-relaxed">
-                        {project.mission}
-                      </p>
-                    </div>
-                  )}
-
-                  {project.progress && (
-                    <div className="mb-8">
-                      <h4 className="text-lg font-bold mb-3">
-                        Current Progress
-                      </h4>
-                      <p className="text-muted-foreground">
-                        {project.progress}
-                      </p>
-                    </div>
-                  )}
-
-                  {!project.mission && !project.progress && (
-                    <p className="text-muted-foreground leading-relaxed mb-10 line-clamp-4">
+                  {project.description && (
+                    <p className="text-muted-foreground mb-6 line-clamp-4">
                       {project.description}
                     </p>
                   )}
 
-                  <motion.div whileHover={{ scale: 1.03 }}>
-                    <Link href="/eco-read" className="w-full">
-                      <Button
-                        variant="ghost"
-                        className="group/btn w-full justify-between rounded-2xl border border-border/40 bg-muted/20 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all px-8 py-7 text-lg font-semibold tracking-wide"
-                      >
-                        <span>Read Case Study</span>
-                        <ArrowRight className="w-6 h-6 transition-transform group-hover/btn:translate-x-3" />
-                      </Button>
-                    </Link>
-                  </motion.div>
-                </motion.div>
+                  {/* CTA using internal Link for all projects */}
+                  <Link href={project.route}>
+                    <Button className="w-full justify-between">
+                      Read Case Study
+                      <ArrowRight className="w-5 h-5" />
+                    </Button>
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>

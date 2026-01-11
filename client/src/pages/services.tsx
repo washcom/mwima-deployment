@@ -45,7 +45,7 @@ export default function Services() {
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-primary">Our Services</h1>
           <p className="text-xl text-muted-foreground">
-            Holistic consulting solutions tailored to the unique challenges of development in Africa.
+            We offer holistic consulting solutions tailored to the unique challenges of development in Africa
           </p>
         </div>
       </div>
@@ -54,13 +54,20 @@ export default function Services() {
       <div className="container mx-auto px-4 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Card key={service.id} className="border-t-4 border-t-secondary hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="pb-2">                
+            <Card
+              key={service.id}
+              className="relative hover:shadow-xl transition-shadow duration-300"
+            >
+              {/* Short left accent */}
+              <div className="absolute left-0 top-4 bottom-4 w-1 bg-secondary rounded-r-md"></div>
+
+              <CardHeader className="pb-2 relative z-10">                
                 <CardTitle className="text-2xl font-bold text-primary font-heading">
                   {service.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+
+              <CardContent className="relative z-10 pl-4">
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   {service.description}
                 </p>

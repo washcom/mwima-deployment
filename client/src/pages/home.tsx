@@ -2,10 +2,11 @@ import { Link } from "wouter";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import home from "@assets/stock_images/hero.jpg";
+import home from "@assets/stock_images/homepage.png";
 import ecopulseimage from "@assets/stock_images/capacity.jpg";
-import mitigating from "@assets/stock_images/research.jpg";
+import mitigating from "@assets/stock_images/strategy.png";
 import meImage from "@assets/stock_images/data_analysis_monito_5040bc45.jpg";
+import software_engineering from "@assets/stock_images/software_engineering.jpg";
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
                 <span className="text-secondary">Strategic Impact</span>
               </h1>
               <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-xl">
-                Partnering with organizations to design, monitor, and evaluate development programs that create lasting change across Africa.
+                We partner with organizations to design, monitor and evaluate development programs that create lasting change across Africa
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link 
@@ -54,16 +55,15 @@ export default function Home() {
       {/* Services Preview */}
       <section className="py-24">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-secondary font-semibold uppercase tracking-wider text-sm mb-3">Our Expertise</h2>
-            <h3 className="text-4xl font-bold mb-6 text-primary">Comprehensive Development Solutions</h3>
+          <div className="text-center max-w-3xl mx-auto mb-16">           
+            <h3 className="text-4xl font-bold mb-6 text-primary">Our Expertise</h3>
             <p className="text-muted-foreground text-lg">Our multidisciplinary team brings deep technical expertise and contextual understanding to every engagement.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ServiceCard 
-              title="Research & Strategy"
-              description="Data-driven insights to inform policy, program design, and strategic decision-making."
+              title="Strategy"
+              description="We help organisations to develop clear actionable plans and support them to deliver high-impact projects with focus and speed."
               image={mitigating}
             />
             <ServiceCard 
@@ -76,23 +76,28 @@ export default function Home() {
               description="Empowering teams and communities through tailored training and institutional strengthening."
               image={ecopulseimage}
             />
+            <ServiceCard 
+              title="Software Engineering"
+              description="Empowering teams to design, build, and scale reliable software solutions through tailored engineering training and technical capacity building."
+              image={software_engineering}
+            />
           </div>
         </div>
       </section>
-
       {/* Why Choose Us */}
       <section className="py-24 bg-muted/50">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-secondary font-semibold uppercase tracking-wider text-sm mb-3">Why Choose Us</h2>
-            <h3 className="text-4xl font-bold text-primary mb-6">Local Insight, Global Standards</h3>
+            <h3 className="text-4xl font-bold text-primary mb-6">Local Insights, Global Standards</h3>
             <p className="text-muted-foreground text-lg">Delivering solutions with local insight while adhering to international best practices.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Feature title="Regional Expertise" description="Deep understanding of East African context and development challenges." />
+            <Feature title="Regional Expertise" description="deep understanding of the unique challenges and opportunities the region present" />
             <Feature title="Proven Methodology" description="Scientifically-grounded approaches adapted for practical application." />
-            <Feature title="Cross-Cultural Insight" description="Bridging the gap between international donor expectations and local realities." />
+            <Feature title="Use-Centred" description="A user-centered approach that grounds solutions in real-world realities and needs.
+" />
           </div>
         </div>
       </section>

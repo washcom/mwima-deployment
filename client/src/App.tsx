@@ -10,6 +10,7 @@ import Services from "@/pages/services";
 import CaseStudies from "@/pages/case-studies";
 import Contact from "@/pages/contact";
 import EcoRead from "@/pages/Eco-read";
+import art from "@/pages/art";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
         <Route path="/case-studies" component={CaseStudies} />
         <Route path="/contact" component={Contact} />
         <Route path="/eco-read" component={EcoRead} />
+        <Route path="/art-malawi" component={art} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
