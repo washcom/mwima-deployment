@@ -74,7 +74,7 @@ export default function Home() {
             />
             <ServiceCard 
               title="Capacity Building"
-              description="Empowering teams and communities through tailored training and institutional strengthening."
+              description="We have proven organizational expertise in capacity building, tailored training and institutional training."
               image={ecopulseimage}
             />
             <ServiceCard 
