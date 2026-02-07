@@ -110,18 +110,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Preview */}
+      {/* Services Preview - Updated with bigger Our Expertise */}
       <section className="py-24">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">           
-            <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              <div className="w-2 h-2 rounded-full bg-primary mr-2" />
-              Our Expertise
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
-              Core <span className="text-secondary">Capabilities</span>
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            {/* Main heading - Our Expertise (bigger) */}
+            <h2 className="text-5xl md:text-6xl font-bold text-primary mb-8">
+              Our <span className="text-secondary">Expertise</span>
             </h2>
+            
+            {/* Subheading - Core Capabilities (smaller) */}
+            <h3 className="text-3xl md:text-4xl font-semibold text-primary mb-10 text-muted-foreground/80">
+              Core <span className="text-secondary">Capabilities</span>
+            </h3>
+            
             <p className="text-xl text-muted-foreground/80">
               Our multidisciplinary team brings deep technical expertise and contextual understanding to every engagement.
             </p>
@@ -138,7 +140,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us - Corrected with Why Choose Us as main heading */}
+      {/* Why Choose Us */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto mb-16">
@@ -217,7 +219,7 @@ function ServiceCard({ service }: { service: any }) {
         
         <div className="mt-auto pt-4 border-t border-border/50 group-hover:border-primary/30 transition-colors duration-300">
           <Link 
-            href={`/services`}
+            href={`/services#${service.id}`}
             className="text-sm font-semibold inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group/link"
           >
             Learn more

@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "wouter";
 import { cn } from "@/lib/utils";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 
 export default function Services() {
   const services = [
@@ -106,32 +106,36 @@ export default function Services() {
 
   return (
     <div className="bg-background min-h-screen flex flex-col">
-      {/* Header */}
+      {/* Header - Updated with new pattern */}
       <div className="relative py-24 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-          <div className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 backdrop-blur-sm">
-            <div className="w-2 h-2 rounded-full bg-primary mr-2" />
-            Our Services
-          </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading mb-6 text-primary leading-tight">
-            Core <span className="text-secondary">Capabilities</span>
+          {/* Main heading - Our Services (bigger) */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading mb-8 text-primary">
+            Our <span className="text-secondary">Services</span>
           </h1>
+          
+          {/* Subheading - Core Capabilities (smaller) */}
+          <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-10 text-muted-foreground/80">
+            Core <span className="text-secondary">Capabilities</span>
+          </h2>
+          
           <p className="text-xl md:text-2xl text-muted-foreground/80 max-w-3xl mx-auto">
             Comprehensive expertise across the development lifecycle. Specialized solutions for measurable impact.
           </p>
         </div>
       </div>
 
-      {/* Services Grid */}
+      {/* Services Grid - UPDATED with id attributes */}
       <div className="container mx-auto px-4 py-16 md:py-24 flex-grow">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {services.map((service) => (
             <div
               key={service.id}
-              className="group relative"
+              id={service.id} // Added this ID for anchor linking
+              className="group relative scroll-mt-24" // Added scroll-mt for better scrolling
             >
               <Card className={cn(
                 "h-full border border-border/50 bg-card shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2",
@@ -167,20 +171,23 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Process Section */}
+      {/* Process Section - Updated with new pattern */}
       <div className="py-24 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-muted/20 via-background to-background" />
         <div className="absolute inset-0 bg-dot-pattern opacity-10" />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <div className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-8 backdrop-blur-sm">
-              <div className="w-2 h-2 rounded-full bg-secondary mr-2" />
-              Our Methodology
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6">
-              How We Deliver <span className="text-secondary">Impact</span>
+          <div className="text-center max-w-4xl mx-auto mb-20">
+            {/* Main heading - Our Methodology (bigger) */}
+            <h2 className="text-5xl md:text-6xl font-bold font-heading text-primary mb-8">
+              Our <span className="text-secondary">Methodology</span>
             </h2>
+            
+            {/* Subheading - How We Deliver Impact (smaller) */}
+            <h3 className="text-3xl md:text-4xl font-semibold text-primary mb-10 text-muted-foreground/80">
+              How We Deliver <span className="text-secondary">Impact</span>
+            </h3>
+            
             <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto">
               A systematic approach ensuring sustainable outcomes through collaboration and iteration.
             </p>
@@ -203,9 +210,9 @@ export default function Services() {
                     {item.step}
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-foreground transition-colors duration-300">
+                  <h4 className="text-2xl font-bold text-primary mb-4 group-hover:text-foreground transition-colors duration-300">
                     {item.title}
-                  </h3>
+                  </h4>
                   
                   <p className="text-muted-foreground/80 text-sm leading-relaxed group-hover:text-foreground/80 transition-colors duration-300 px-2">
                     {item.desc}
@@ -217,7 +224,7 @@ export default function Services() {
         </div>
       </div>
 
-      {/* CTA */}
+      {/* CTA - Updated with new pattern */}
       <div className="py-24 md:py-28">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="bg-gradient-to-br from-card via-card to-primary/5 border border-border/50 rounded-3xl p-10 md:p-14 text-center relative overflow-hidden shadow-xl">
@@ -226,13 +233,16 @@ export default function Services() {
             <div className="absolute -bottom-20 -right-20 w-40 h-40 rounded-full bg-secondary/10 blur-3xl" />
             
             <div className="relative z-10">
-              <div className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 backdrop-blur-sm">
-                <div className="w-2 h-2 rounded-full bg-primary mr-2" />
-                Let's Collaborate
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6">
-                Ready to Create <span className="text-secondary">Impact</span>?
+              {/* Main heading - Let's Collaborate (bigger) */}
+              <h2 className="text-5xl md:text-6xl font-bold font-heading text-primary mb-8">
+                Let's <span className="text-secondary">Collaborate</span>
               </h2>
+              
+              {/* Subheading - Ready to Create Impact? (smaller) */}
+              <h3 className="text-3xl md:text-4xl font-semibold text-primary mb-10 text-muted-foreground/80">
+                Ready to Create <span className="text-secondary">Impact</span>?
+              </h3>
+              
               <p className="text-xl text-muted-foreground/80 mb-10 max-w-2xl mx-auto">
                 Every project is unique. Let's discuss how we can tailor our expertise to meet your specific requirements.
               </p>
@@ -245,9 +255,7 @@ export default function Services() {
                   )}
                 >
                   <span>Schedule a Consultation</span>
-                  <svg className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
+                  <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link 
                   href="/case-studies" 
@@ -257,9 +265,7 @@ export default function Services() {
                   )}
                 >
                   <span>View Case Studies</span>
-                  <svg className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
+                  <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -283,4 +289,3 @@ export default function Services() {
     </div>
   );
 }
-
