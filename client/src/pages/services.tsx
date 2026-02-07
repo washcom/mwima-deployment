@@ -271,7 +271,7 @@ export default function Services() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3">
             <div className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} African Development Consulting. All rights reserved.
+              © {new Date().getFullYear()} Mwima Consulting. All rights reserved.
             </div>
             <div className="text-sm text-muted-foreground">
               Developed and maintained by <span className="text-primary font-medium">Mbeevie</span>
