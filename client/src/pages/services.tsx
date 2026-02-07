@@ -182,11 +182,8 @@ export default function Services() {
             {/* Subheading - How We Deliver Impact */}
             <h3 className="text-3xl md:text-4xl font-semibold text-primary mb-8 text-muted-foreground/80">
               How We Deliver <span className="text-secondary">Impact</span>
-            </h3>
+            </h3>          
             
-            <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto">
-              A systematic approach ensuring sustainable outcomes through collaboration and iteration.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
