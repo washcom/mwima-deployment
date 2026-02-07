@@ -4,12 +4,9 @@ import { MapPin, Calendar, ArrowRight, Target, Users, TrendingUp } from "lucide-
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
-// If these imports don't work, you can use placeholder images or fix the paths
-const meImage = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800";
-const ecopulseimage = "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800";
-const farm = "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=800";
-
+import ecopulseimage from '../../../attached_assets/stock_images/urban.jpeg';
+import farm from '../../../attached_assets/stock_images/software_engineering.jpg';
+import meImage from '../../../attached_assets/stock_images/hiv.jpeg';
 type Category =
   | "All"
   | "Research"
@@ -266,8 +263,7 @@ export default function CaseStudies() {
                   {/* Image Container */}
                   <div className="relative h-64 overflow-hidden">
                     <img
-                      src={project.image}
-                      alt={project.title}
+                      src={project.image}                      
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
