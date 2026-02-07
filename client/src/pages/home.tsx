@@ -151,7 +151,7 @@ export default function Home() {
             
             {/* Subheading - Local Insights Global Standards (smaller) */}
             <h3 className="text-3xl md:text-4xl font-semibold text-primary mb-10 text-muted-foreground/80">
-              Local Insights <span className="text-secondary">Global Standards</span>
+              Local Insights, <span className="text-secondary">Global Standards</span>
             </h3>
             
             {/* Removed the paragraph as requested */}
@@ -170,7 +170,7 @@ export default function Home() {
             />
             <Feature 
               title="User-Centered Approach" 
-              description="We Ground solutions in real-world realities and needs."
+              description="We ground solutions in real-world realities and needs."
               borderColor="border-l-emerald-500"
             />
           </div>
