@@ -117,10 +117,7 @@ export default function Services() {
             Our <span className="text-secondary">Services</span>
           </h1>
           
-          {/* Subheading - Core Capabilities (smaller) */}
-          <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-10 text-muted-foreground/80">
-            Core <span className="text-secondary">Capabilities</span>
-          </h2>
+          {/* Subheading - Core Capabilities (smaller) */}        
           
           <p className="text-xl md:text-2xl text-muted-foreground/80 max-w-3xl mx-auto">
             Comprehensive expertise across the development lifecycle. Specialized solutions for measurable impact.

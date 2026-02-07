@@ -67,11 +67,7 @@ export default function Home() {
         
         <div className="container mx-auto px-6 py-20 relative z-10 text-center lg:text-left max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-in slide-in-from-bottom-5 duration-700 fade-in">
-              <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium mb-8">
-                <div className="w-2 h-2 rounded-full bg-secondary mr-2" />
-                Strategic Development Partners
-              </div>
+            <div className="animate-in slide-in-from-bottom-5 duration-700 fade-in">              
               
               <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight text-white">
                 Evidence-Based <br/>
@@ -120,9 +116,7 @@ export default function Home() {
             </h2>
             
             {/* Subheading - Core Capabilities (smaller) */}
-            <h3 className="text-3xl md:text-4xl font-semibold text-primary mb-10 text-muted-foreground/80">
-              Core <span className="text-secondary">Capabilities</span>
-            </h3>
+           
             
             <p className="text-xl text-muted-foreground/80">
               Our multidisciplinary team brings deep technical expertise and contextual understanding to every engagement.
