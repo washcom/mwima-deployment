@@ -36,7 +36,7 @@ type Project = {
 const projects: Project[] = [
   {
     id: 2,
-    title: "EcoPulse: Civic-Tech Ecosystem for Air Quality Action",
+    title: "EcoPulse: A Civic-Tech Ecosystem for Air Quality Action",
     category: "Research",
     mission: "Empowering communities with real-time air-quality data, AI-driven health guidance, and public accountability systems",
     progress: "Phase 1 Implementation",
@@ -51,13 +51,13 @@ const projects: Project[] = [
       "AI-powered health recommendations"
     ],
     metrics: [
-      { value: "15+", label: "Monitoring Sites" },
-      { value: "10K+", label: "Community Members" }
+      { value: "1", label: "Monitoring Sites" },
+      { value: "1K+", label: "Community Members" }
     ]
   },
   {
     id: 3,
-    title: "Digital Health for HIV Care Retention",
+    title: "SMS intervention for HIV care retention",
     category: "Research",
     description: "Leveraging UX research, usability testing, and predictive AI to improve patient engagement and care outcomes in HIV treatment programs",
     stats: "3,000+ Youth Reached",
@@ -71,7 +71,7 @@ const projects: Project[] = [
       "Data-driven care optimization"
     ],
     metrics: [
-      { value: "3K+", label: "Youth Reached" },
+      { value: "3K+", label: "Clients reached" },
       { value: "45%", label: "Engagement Increase" }
     ]
   },
