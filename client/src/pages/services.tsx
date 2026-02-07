@@ -115,8 +115,7 @@ export default function Services() {
           {/* Main heading - Our Services (bigger) */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading mb-8 text-primary">
             Our <span className="text-secondary">Services</span>
-          </h1>
-          
+          </h1>          
           {/* Subheading - Core Capabilities (smaller) */}        
           
           <p className="text-xl md:text-2xl text-muted-foreground/80 max-w-3xl mx-auto">
