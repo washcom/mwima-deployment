@@ -120,7 +120,7 @@ export default function Services() {
           {/* Subheading - Core Capabilities (smaller) */}        
           
           <p className="text-xl md:text-2xl text-muted-foreground/80 max-w-3xl mx-auto">
-            Comprehensive expertise across the development lifecycle. Specialized solutions for measurable impact.
+           We build for scale and long term sustainability
           </p>
         </div>
       </div>
