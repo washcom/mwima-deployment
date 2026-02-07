@@ -69,12 +69,12 @@ export default function Home() {
             />
             <ServiceCard 
               title="Monitoring & Evaluation"
-              description="Robust frameworks to measure impact, ensure accountability, and foster learning."
+              description="We build robust frameworks to measure impact, ensure accountability, and foster learning."
               image={meImage}
             />
             <ServiceCard 
               title="Capacity Building"
-              description="Empowering teams and communities through tailored training and institutional strengthening."
+              description="We have proven organizational expertise in capacity building, tailored training and institutional training."
               image={ecopulseimage}
             />
             <ServiceCard 
