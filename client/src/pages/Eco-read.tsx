@@ -66,7 +66,7 @@ export default function EcoPulsePhase1CaseStudy() {
       <main className="container mx-auto px-6 py-20 md:py-32 max-w-6xl space-y-32">
         <AnimatedContentSection
           title="The Hidden Crisis"
-          bgClass="bg-card border border-border/50 shadow-lg"
+          bgClass="bg-card border border-secondary/25 shadow-lg"
         >
           <p>
             Air pollution ranks as the top environmental health risk globally and
@@ -110,7 +110,7 @@ export default function EcoPulsePhase1CaseStudy() {
                 key={i}
                 variants={fadeUp}
                 whileHover={{ scale: 1.05 }}
-                className="bg-card shadow-lg rounded-2xl p-6 border border-border/50"
+                className="bg-card shadow-lg rounded-2xl p-6 border border-secondary/25"
               >
                 <span className="inline-block w-10 h-10 bg-primary text-white font-bold rounded-full text-center leading-10 mr-3">
                   {i + 1}
@@ -123,7 +123,7 @@ export default function EcoPulsePhase1CaseStudy() {
 
         <AnimatedContentSection
           title="Methodology"
-          bgClass="bg-card border border-border/50 shadow-lg"
+          bgClass="bg-card border border-secondary/25 shadow-lg"
         >
           <p>
             Cross-sectional study conducted in Komarock Harmony A Community Health
@@ -166,7 +166,7 @@ export default function EcoPulsePhase1CaseStudy() {
                 key={i}
                 variants={fadeUp}
                 whileHover={{ scale: 1.05 }}
-                className="bg-card rounded-3xl p-10 text-center shadow-lg border border-border/50"
+                className="bg-card rounded-3xl p-10 text-center shadow-lg border border-secondary/25"
               >
                 <div className="text-6xl md:text-7xl font-extrabold mb-3 text-primary">
                   {stat.value}
@@ -192,7 +192,7 @@ export default function EcoPulsePhase1CaseStudy() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="bg-card rounded-3xl p-12 md:p-20 shadow-2xl border border-border/50 text-center space-y-6"
+          className="bg-card rounded-3xl p-12 md:p-20 shadow-2xl border border-secondary/25 text-center space-y-6"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-6">
             Path Forward with EcoPulse

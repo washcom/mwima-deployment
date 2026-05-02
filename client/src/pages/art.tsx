@@ -66,7 +66,7 @@ export default function PatientRetentionCaseStudy() {
         {/* Problem Section */}
         <AnimatedContentSection
           title="Problem Statement"
-          bgClass="bg-card border border-border/50 shadow-lg"
+          bgClass="bg-card border border-secondary/25 shadow-lg"
         >
           <p>
             Antiretroviral therapy (ART) has demonstrated remarkable efficacy in mitigating HIV/AIDS-related morbidity and mortality, particularly in resource-limited settings. However, the full realization of its benefits has been impeded by high lost-to-follow-up (LTFU), especially within the first year on ART. Newly initiated ART clients are particularly vulnerable to treatment interruptions due to a multitude of factors, including the severity of their illness, difficulties in disclosing their HIV status, and the adaptation to life with HIV and ART.
@@ -99,7 +99,7 @@ export default function PatientRetentionCaseStudy() {
                 key={i}
                 variants={fadeUp}
                 whileHover={{ scale: 1.05 }}
-                className="bg-card shadow-lg rounded-2xl p-6 border border-border/50"
+                className="bg-card shadow-lg rounded-2xl p-6 border border-secondary/25"
               >
                 <span className="inline-block w-10 h-10 bg-primary text-white font-bold rounded-full text-center leading-10 mr-3">
                   {i + 1}
@@ -113,7 +113,7 @@ export default function PatientRetentionCaseStudy() {
         {/* Methodology Section */}
         <AnimatedContentSection
           title="Methodology"
-          bgClass="bg-card border border-border/50 shadow-lg"
+          bgClass="bg-card border border-secondary/25 shadow-lg"
         >
           <p>
             Conducted a UX research study involving interviews, contextual inquiries, and usability testing with ART patients and healthcare providers.
@@ -163,7 +163,7 @@ export default function PatientRetentionCaseStudy() {
                 key={i}
                 variants={fadeUp}
                 whileHover={{ scale: 1.03 }}
-                className="bg-white rounded-3xl p-10 text-center shadow-lg border border-border/50"
+                className="bg-white rounded-3xl p-10 text-center shadow-lg border border-secondary/25"
               >
                 <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
                   {stat.title}
@@ -186,7 +186,7 @@ export default function PatientRetentionCaseStudy() {
         {/* Proposed Solution Section */}
         <AnimatedContentSection
           title="Proposed Solution"
-          bgClass="bg-card border border-border/50 shadow-lg"
+          bgClass="bg-card border border-secondary/25 shadow-lg"
         >
           <p>
             Developed a mobile application to enhance patient retention and adherence for ART clients. Key features include appointment reminders, medication tracking, adherence feedback, and motivational messaging.

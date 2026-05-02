@@ -1,8 +1,12 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { buttonVariants } from "@/components/ui/button";
 import { Link } from "wouter";
 import { cn } from "@/lib/utils";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  MoveRight,
+} from "lucide-react";
 
 export default function Services() {
   const services = [
@@ -14,8 +18,7 @@ export default function Services() {
         "Resource Planning", 
         "Risk Mitigation", 
         "Proposal Development"
-      ],
-      color: "border-l-blue-500"
+      ]
     },
     {
       id: "research-analysis",
@@ -24,8 +27,7 @@ export default function Services() {
         "User Research", 
         "Surveys & Interviews", 
         "Data Insights"
-      ],
-      color: "border-l-purple-500"
+      ]
     },
     {
       id: "product-design",
@@ -36,8 +38,7 @@ export default function Services() {
         "Wireframing", 
         "Usability Testing", 
         "A/B Testing"
-      ],
-      color: "border-l-emerald-500"
+      ]
     },
     {
       id: "design-strategy",
@@ -48,8 +49,7 @@ export default function Services() {
         "Strategic Advisory", 
         "Design Workshops", 
         "Workflows Design"
-      ],
-      color: "border-l-amber-500"
+      ]
     },
     {
       id: "monitoring-evaluation",
@@ -61,8 +61,7 @@ export default function Services() {
         "Dashboards", 
         "Sustainability Assessment", 
         "Third Party Monitoring"
-      ],
-      color: "border-l-rose-500"
+      ]
     },
     {
       id: "software-solutions",
@@ -77,8 +76,7 @@ export default function Services() {
         "Web Development", 
         "System Support", 
         "Technical Documentation"
-      ],
-      color: "border-l-indigo-500"
+      ]
     },
     {
       id: "facilitation",
@@ -87,8 +85,7 @@ export default function Services() {
         "Stakeholder Workshops", 
         "Team Alignment", 
         "Ideation & Design Sprints"
-      ],
-      color: "border-l-violet-500"
+      ]
     },
     {
       id: "emerging-tech",
@@ -99,8 +96,7 @@ export default function Services() {
         "Tech Advisory", 
         "Proof of Concepts", 
         "Compliance Support"
-      ],
-      color: "border-l-cyan-500"
+      ]
     }
   ];
 
@@ -126,40 +122,46 @@ export default function Services() {
 
       {/* Services Grid - Minimal spacing */}
       <div className="container mx-auto px-4 py-4 md:py-6 flex-grow">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => (
             <div
               key={service.id}
               id={service.id}
               className="group relative scroll-mt-20"
             >
-              <Card className={cn(
-                "h-full border border-border/50 bg-card shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1",
-                service.color,
-                "border-l-4 hover:border-l-primary"
-              )}>
-                <CardHeader className="pb-3 pt-5 px-5">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-1">
-                      <CardTitle className="text-lg font-bold text-primary font-heading group-hover:text-foreground transition-colors duration-300 tracking-tight">
+              <Card
+                className="h-full rounded-3xl border border-secondary/25 bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-xl"
+              >
+                <CardContent className="flex min-h-[260px] p-6">
+                  <div className="flex min-w-0 flex-1 flex-col gap-5">
+                    <div>
+                      <h2 className="text-lg font-bold font-heading tracking-tight text-primary transition-colors duration-300 group-hover:text-foreground">
                         {service.title}
-                      </CardTitle>
+                      </h2>
                     </div>
-                  </div>
-                </CardHeader>
 
-                <CardContent className="px-5 pb-5">
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li 
-                        key={idx} 
-                        className="flex items-center text-sm text-foreground/70 group-hover:text-foreground/90 transition-colors duration-300"
-                      >
-                        <CheckCircle className="w-3.5 h-3.5 text-primary mr-2.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                        <span className="leading-relaxed font-medium">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center text-sm text-foreground/70 transition-colors duration-300 group-hover:text-foreground/90"
+                        >
+                          <CheckCircle className="mr-2.5 h-3.5 w-3.5 flex-shrink-0 text-primary transition-transform group-hover:scale-110" />
+                          <span className="leading-relaxed font-medium">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link
+                      href="/contact"
+                      className="mt-auto inline-flex items-center gap-3 text-sm font-semibold text-primary transition-colors duration-300 hover:text-primary/80"
+                    >
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary transition-all duration-300 group-hover:border-secondary group-hover:bg-secondary group-hover:text-secondary-foreground">
+                        <MoveRight className="h-4 w-4" />
+                      </span>
+                      <span>Read more</span>
+                    </Link>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -197,7 +199,7 @@ export default function Services() {
                 key={item.step} 
                 className="group relative"
               >
-                <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+                <div className="bg-card/80 backdrop-blur-sm border border-secondary/25 rounded-2xl p-6 text-center hover:shadow-xl hover:-translate-y-1 hover:border-secondary/45 transition-all duration-500">
                   {/* Step indicator */}
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-lg font-bold text-white shadow-lg mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     {item.step}
@@ -220,7 +222,7 @@ export default function Services() {
       {/* CTA */}
       <div className="py-16 md:py-20">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="bg-gradient-to-br from-card via-card to-primary/5 border border-border/50 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden shadow-xl">
+          <div className="bg-gradient-to-br from-card via-card to-primary/5 border border-secondary/25 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden shadow-xl">
             {/* Background elements */}
             <div className="absolute -top-16 -left-16 w-32 h-32 rounded-full bg-primary/10 blur-3xl" />
             <div className="absolute -bottom-16 -right-16 w-32 h-32 rounded-full bg-secondary/10 blur-3xl" />

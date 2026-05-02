@@ -259,7 +259,7 @@ export default function CaseStudies() {
                 }}
                 className="group"
               >
-                <div className="bg-card/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-border hover:border-primary/20 hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
+                <div className="bg-card/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-secondary/25 hover:border-secondary/45 hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
                   {/* Image Container */}
                   <div className="relative h-64 overflow-hidden">
                     <img

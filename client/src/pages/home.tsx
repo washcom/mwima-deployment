@@ -3,57 +3,67 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import home from "@assets/stock_images/homepage.png";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 32 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65 },
+  },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.08 },
+  },
+};
 
 export default function Home() {
   const services = [
     {
       id: "project-management",
       title: "Project & Program Management",
-      description: "We lead strategic development and delivery of projects.",
-      borderColor: "border-l-blue-500"
+      description: "We lead strategic development and delivery of projects."
     },
     {
       id: "research-analysis",
       title: "Research & Data Analysis",
-      description: "We uncover insights through rigorous research and data analysis to inform decisions and effective interventions.",
-      borderColor: "border-l-purple-500"
+      description: "We uncover insights through rigorous research and data analysis to inform decisions and effective interventions."
     },
     {
       id: "product-design",
       title: "Product & UX Design",
-      description: "We craft user-centered products and seamless experiences that solve real-world problems.",
-      borderColor: "border-l-emerald-500"
+      description: "We craft user-centered products and seamless experiences that solve real-world problems."
     },
     {
       id: "design-strategy",
       title: "Service & Design Strategy",
-      description: "We design systems and strategies that align people processes and technology for impact.",
-      borderColor: "border-l-amber-500"
+      description: "We design systems and strategies that align people processes and technology for impact."
     },
     {
       id: "monitoring-evaluation",
       title: "Monitoring Evaluation & Impact",
-      description: "We measure outcomes at every stage—baseline midline endline—to drive learning and sustainable impact.",
-      borderColor: "border-l-rose-500"
+      description: "We measure outcomes at every stage—baseline midline endline—to drive learning and sustainable impact."
     },
     {
       id: "software-solutions",
       title: "Software & Technology Solutions",
-      description: "We build reliable scalable and secure digital solutions tailored to context specific needs.",
-      borderColor: "border-l-indigo-500"
+      description: "We build reliable scalable and secure digital solutions tailored to context specific needs."
     },
     {
       id: "facilitation",
       title: "Facilitation & Co-creation",
-      description: "We engage stakeholders through workshops and co-creation sessions to generate actionable solutions.",
-      borderColor: "border-l-violet-500"
+      description: "We engage stakeholders through workshops and co-creation sessions to generate actionable solutions."
     },
     {
       id: "emerging-tech",
       title: "Emerging Tech & Digital Health",
-      description: "We leverage AI and emerging technologies to deliver innovative evidence-based digital health solutions.",
-      borderColor: "border-l-cyan-500"
+      description: "We leverage AI and emerging technologies to deliver innovative evidence-based digital health solutions."
     }
   ];
 
@@ -107,9 +117,18 @@ export default function Home() {
       </section>
 
       {/* Services Preview - Updated with bigger Our Expertise */}
-      <section className="py-24">
+      <motion.section
+        className="py-24"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-4xl mx-auto mb-16">
+          <motion.div
+            className="text-center max-w-4xl mx-auto mb-16"
+            variants={fadeUp}
+          >
             {/* Main heading - Our Expertise (bigger) */}
             <h2 className="text-5xl md:text-6xl font-bold text-primary mb-8">
               Our <span className="text-secondary">Expertise</span>
@@ -121,23 +140,38 @@ export default function Home() {
             <p className="text-xl text-muted-foreground/80">
               Our multidisciplinary team brings deep technical expertise and contextual understanding to every engagement.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
             {services.map((service) => (
               <ServiceCard 
                 key={service.id}
                 service={service}
               />
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-muted/30">
+      <motion.section
+        className="py-24 bg-muted/30"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-4xl mx-auto mb-16">
+          <motion.div
+            className="text-center max-w-4xl mx-auto mb-16"
+            variants={fadeUp}
+          >
             {/* Main heading - Why Choose Us (bigger) */}
             <h2 className="text-5xl md:text-6xl font-bold text-primary mb-8">
               Why <span className="text-secondary">Choose Us</span>
@@ -149,32 +183,44 @@ export default function Home() {
             </h3>
             
             {/* Removed the paragraph as requested */}
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
             <Feature 
               title="Regional Expertise" 
               description="Our team has a deep understanding of the unique challenges and opportunities the region presents"
-              borderColor="border-l-blue-500"
             />
             <Feature 
               title="Proven Methodology" 
               description="Our research backed approach ensures delivery of measurable results."
-              borderColor="border-l-purple-500"
             />
             <Feature 
               title="User-Centered Approach" 
               description="We ground solutions in real-world realities and needs."
-              borderColor="border-l-emerald-500"
             />
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-background">
+      <motion.section
+        className="py-24 bg-background"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+      >
         <div className="container mx-auto px-6 max-w-3xl">
-          <div className="bg-gradient-to-br from-card via-card to-primary/5 border border-border/50 rounded-3xl p-10 md:p-12 text-center shadow-xl">
+          <motion.div
+            className="bg-gradient-to-br from-card via-card to-primary/5 border border-secondary/25 rounded-3xl p-10 md:p-12 text-center shadow-xl"
+            variants={fadeUp}
+          >
             <h2 className="text-4xl font-bold text-primary mb-6">
               Ready to <span className="text-secondary">maximize</span> your impact?
             </h2>
@@ -188,52 +234,48 @@ export default function Home() {
               Get in Touch
               <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
             </Link>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
 
 function ServiceCard({ service }: { service: any }) {
   return (
-    <Card className={cn(
-      "overflow-hidden border border-border/50 bg-card shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group h-full",
-      service.borderColor,
-      "border-l-4"
-    )}>
-      <CardContent className="p-6 flex flex-col h-full">
-        <h4 className="text-lg font-bold text-primary mb-3 group-hover:text-foreground transition-colors duration-300 line-clamp-2">
-          {service.title}
-        </h4>
-        
-        <p className="text-muted-foreground flex-1 text-sm leading-relaxed mb-4 group-hover:text-foreground/80 transition-colors duration-300">
-          {service.description}
-        </p>
-        
-        <div className="mt-auto pt-4 border-t border-border/50 group-hover:border-primary/30 transition-colors duration-300">
-          <Link 
-            href={`/services#${service.id}`}
-            className="text-sm font-semibold inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group/link"
-          >
-            Learn more
-            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/link:translate-x-1" />
-          </Link>
-        </div>
-      </CardContent>
-    </Card>
+    <motion.div variants={fadeUp}>
+      <Card className="overflow-hidden border border-secondary/25 bg-card shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-secondary/45 group h-full">
+        <CardContent className="p-6 flex flex-col h-full">
+          <h4 className="text-lg font-bold text-primary mb-3 group-hover:text-foreground transition-colors duration-300 line-clamp-2">
+            {service.title}
+          </h4>
+          
+          <p className="text-muted-foreground flex-1 text-sm leading-relaxed mb-4 group-hover:text-foreground/80 transition-colors duration-300">
+            {service.description}
+          </p>
+          
+          <div className="mt-auto pt-4 border-t border-secondary/20 group-hover:border-secondary/35 transition-colors duration-300">
+            <Link 
+              href={`/services#${service.id}`}
+              className="text-sm font-semibold inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group/link"
+            >
+              Learn more
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/link:translate-x-1" />
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 }
 
-function Feature({ title, description, borderColor }: { title: string, description: string, borderColor: string }) {
+function Feature({ title, description }: { title: string, description: string }) {
   return (
-    <div className={cn(
-      "bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300",
-      borderColor,
-      "border-l-4"
-    )}>
-      <h4 className="text-xl font-bold text-primary mb-2">{title}</h4>
-      <p className="text-muted-foreground">{description}</p>
-    </div>
+    <motion.div variants={fadeUp}>
+      <div className="bg-card/80 backdrop-blur-sm border border-secondary/25 rounded-2xl p-6 shadow hover:shadow-lg hover:-translate-y-1 hover:border-secondary/45 transition-all duration-300">
+        <h4 className="text-xl font-bold text-primary mb-2">{title}</h4>
+        <p className="text-muted-foreground">{description}</p>
+      </div>
+    </motion.div>
   );
 }

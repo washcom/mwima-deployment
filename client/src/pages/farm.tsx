@@ -150,7 +150,7 @@ export default function EFarmCaseStudy() {
       <main className="container mx-auto px-6 py-20 md:py-32 max-w-6xl space-y-24">
         <AnimatedContentSection
           title="Problem Statement"
-          bgClass="bg-card border border-border/50 shadow-lg"
+          bgClass="bg-card border border-secondary/25 shadow-lg"
         >
           <p>
             Farmers in East Africa often rely on brokers to sell produce, leading
@@ -165,7 +165,7 @@ export default function EFarmCaseStudy() {
 
         <AnimatedContentSection
           title="Methodology"
-          bgClass="bg-card border border-border/50 shadow-lg"
+          bgClass="bg-card border border-secondary/25 shadow-lg"
         >
           <p>
             Conducted interviews, surveys, and usability testing with farmers,
@@ -179,7 +179,7 @@ export default function EFarmCaseStudy() {
 
         <AnimatedContentSection
           title="Proposed Solution"
-          bgClass="bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-100 shadow-lg"
+          bgClass="bg-gradient-to-br from-emerald-50 to-green-50 border border-secondary/25 shadow-lg"
         >
           <p className="text-2xl font-bold text-emerald-800 mb-6">
             Built <span className="text-emerald-700">E-farm</span>, a farmer-first web platform
