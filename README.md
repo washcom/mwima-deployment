@@ -1,86 +1,155 @@
-Mwima
+Mwima Consulting
+A modern, responsive web application for Mwima Consulting, providing holistic consulting solutions tailored to the unique challenges of development in Africa.
 
-Mwima is a research-driven civic and development innovation hub focused on generating evidence, designing solutions, and delivering impact across communities in Africa. We work at the intersection of research, monitoring & evaluation (M&E), capacity building, and design strategy to support data-informed decision-making and sustainable development.
+Overview
+Mwima Consulting specializes in research, design strategy, facilitation, monitoring & evaluation, and capacity building. Our website showcases our expertise, case studies, and services through an interactive, user-friendly interface built with cutting-edge web technologies.
 
-🌍 Our Mission
+Features
+Responsive Design: Optimized for desktop, tablet, and mobile devices
+Interactive Animations: Smooth scroll-triggered animations using Framer Motion
+Modern UI Components: Built with Radix UI and Tailwind CSS for accessibility and consistency
+Dynamic Content: Pages for services, case studies, contact, and specialized content like Eco-read
+Form Handling: Contact forms with validation using React Hook Form
+Database Integration: PostgreSQL with Drizzle ORM for data management
+SEO Optimized: Meta tags and structured content for better search visibility
+🛠 Tech Stack
+Frontend
+React 18 - Component-based UI library
+TypeScript - Type-safe JavaScript
+Vite - Fast build tool and development server
+Tailwind CSS - Utility-first CSS framework
+Framer Motion - Animation library for smooth transitions
+Radix UI - Accessible UI primitives
+React Query - Data fetching and state management
+Wouter - Lightweight routing
+Backend
+Node.js - JavaScript runtime
+Express - Web framework
+Drizzle ORM - TypeScript ORM for SQL databases
+PostgreSQL - Relational database
+Connect PG Simple - Session store for PostgreSQL
+Development Tools
+ESLint - Code linting
+TypeScript Compiler - Type checking
+Vite Plugin Meta Images - Dynamic meta image generation
+Getting Started
+Prerequisites
+Node.js (v18 or higher)
+PostgreSQL database
+npm or yarn package manager
+📱 SEO & Performance
+SEO Features Implemented
+Comprehensive Meta Tags: Title, description, keywords, author, robots directives
+Open Graph & Twitter Cards: Optimized social media sharing with preview images
+JSON-LD Structured Data: Organization and LocalBusiness schema for search engines
+Mobile Optimization: Viewport configuration, touch icons, theme colors
+robots.txt: Search engine crawling directives
+sitemap.xml: Dynamic sitemap for all pages
+Web Manifest: PWA support with app manifest
+Canonical URLs: Prevents duplicate content issues
+Mobile-First Design: Responsive and mobile-optimized layout
+SEO Configuration Files
+/client/public/robots.txt - Crawler directives and sitemap reference
+/client/public/sitemap.xml - URL structure for search engines
+/client/public/site.webmanifest - PWA manifest with app details
+/client/index.html - Comprehensive meta tags and structured data
+Performance Optimization
+Vite for fast builds and development server
+Code splitting for optimal bundle size
+Image optimization through Vite plugin
+Smooth animations with Framer Motion (60fps)
+Lazy loading components and images
+CSS-in-JS with Tailwind for efficient styling
+Accessibility
+WCAG 2.1 compliant components from Radix UI
+Semantic HTML structure
+Proper heading hierarchy
+ARIA labels and descriptions
+Keyboard navigation support
+Screen reader friendly
+Installation
+Clone the repository
 
-To empower communities, institutions, and policymakers with credible evidence, actionable insights, and human-centered solutions that drive equitable, resilient, and scalable development outcomes.
+git clone https://github.com/your-username/mwima-consulting.git
+cd mwima-consulting
+Install dependencies
 
-🧭 What We Do
-🔬 Research
+npm install
+Set up the database
 
-We design and conduct high-quality qualitative and quantitative research to understand complex social, environmental, and economic challenges. Our work prioritizes rigor, ethics, and contextual relevance.
+Create a PostgreSQL database
+Configure your database connection in the environment variables
+Run database migrations:
+npm run db:push
+Environment Configuration
 
-📊 Monitoring & Evaluation (M&E)
+Copy .env.example to .env
+Fill in your database credentials and other required variables
+Development
+Start the development server
 
-Mwima supports programs and organizations to measure what matters—tracking outcomes, learning from evidence, and improving impact through:
+npm run dev
+This will start both the client (on port 5000) and server in development mode.
 
-Baseline, midline, and endline evaluations
+Build for production
 
-Theory of Change and results frameworks
+npm run build
+npm start
+📁 Project Structure
+mwima-consulting/
+├── client/                 # Frontend application
+│   ├── index.html
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   ├── hooks/          # Custom React hooks
+│   │   ├── lib/            # Utilities and configurations
+│   │   ├── pages/          # Page components
+│   │   └── main.tsx        # Application entry point
+│   └── public/             # Static assets
+├── server/                 # Backend application
+│   ├── index.ts            # Server entry point
+│   ├── routes.ts           # API routes
+│   ├── static.ts           # Static file serving
+│   └── storage.ts          # Database utilities
+├── script/                 # Build scripts
+├── shared/                 # Shared types and schemas
+├── drizzle.config.ts       # Database configuration
+├── vite.config.ts          # Vite configuration
+└── package.json            # Dependencies and scripts
+Usage
+Navigation
+The website features several key pages:
 
-Impact assessments and learning reviews
+Home: Introduction to Mwima Consulting and featured services
+Services: Detailed overview of our consulting offerings
+Case Studies: Showcase of past projects and successes
+Eco-read: Specialized content on environmental research
+Contact: Contact form and information
+Customization
+Modify content in the client/src/pages/ directory
+Update styles using Tailwind CSS classes
+Adjust animations in Framer Motion components
+Configure database schemas in shared/schema.ts
+Contributing
+We welcome contributions! Please follow these steps:
 
-🧠 Design & Strategy
+Fork the repository
+Create a feature branch (git checkout -b feature/amazing-feature)
+Commit your changes (git commit -m 'Add amazing feature')
+Push to the branch (git push origin feature/amazing-feature)
+Open a Pull Request
+Development Guidelines
+Use TypeScript for type safety
+Follow the existing code style and component patterns
+Test your changes thoroughly
+Update documentation as needed
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-We apply human-centered design and systems thinking to translate insights into practical strategies, products, and policies.
+Contact
+Mwima Consulting
 
-🎓 Capacity Building
-
-We strengthen local capacity through training, mentorship, and tools that enable organizations and communities to collect, analyze, and use data effectively.
-
-🚀 Flagship Initiatives
-EcoPulse
-
-A civic-tech ecosystem addressing air pollution through:
-
-Real-time air quality data
-
-AI-driven health guidance
-
-Community awareness and behavior change
-
-Evidence-based policy engagement
-
-EcoPulse bridges the gap between environmental data, public health, and action.
-
-🧩 Our Approach
-
-Mwima’s work is grounded in five core principles:
-
-Evidence First – Decisions should be backed by credible data
-
-Community-Centered – Solutions must reflect lived realities
-
-Equity & Inclusion – Prioritizing underserved populations
-
-Transparency & Ethics – Responsible research and data use
-
-Scalability – Designing for long-term, system-level impact
-
-🛠️ Technology & Methods
-
-Depending on the project, Mwima uses:
-
-Modern web technologies for dashboards and digital tools
-
-Statistical analysis and data science (R, Python, survey platforms)
-
-GIS and environmental data modeling
-
-Mixed-methods research frameworks
-
-Open-source tools wherever possible
-
-🤝 Who We Work With
-
-Development organizations & NGOs
-
-Government agencies
-
-Community-based organizations
-
-Researchers & academic institutions
-
-Civic-tech and social innovation partners
-# mwima-deployment
+Website: www.mwimaconsulting.com
+Email: info@mwimaconsulting.com
+LinkedIn: Mwima Consulting
+Built with for impactful development consulting in Africa.
